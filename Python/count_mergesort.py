@@ -7,7 +7,13 @@ def contador_intercala(vetor_A, vetor_B):
     n = len(vetor_A)+len(vetor_B)
     vetor = []
     for k in range(n):
-        if vetor_A[i]<vetor_B[j]:
+        if i == len(vetor_A):
+            vetor.append(vetor_B[j])
+            j+=1
+        elif j ==len(vetor_B):
+            vetor.append(vetor_A[i])
+            i+=1
+        elif vetor_A[i] < vetor_B[j]:
             vetor.append(vetor_A[i])
             i+=1
         else:
