@@ -1,5 +1,21 @@
-
-
+import random
+#data 08/02/2024
+# versão modificada do mergesort que alem de ordenar conta o numero de inversoes que faz
+def contador_intercala(vetor_A, vetor_B):
+    inversoes = 0
+    i = j = 0
+    n = len(vetor_A)+len(vetor_B)
+    vetor = []
+    for k in range(n):
+        if vetor_A[i]<vetor_B[j]:
+            vetor.append(vetor_A[i])
+            i+=1
+        else:
+            vetor.append(vetor_B[j])
+            j+=1
+            inversoes += len(vetor_A)-i
+     
+    return inversoes,vetor
 
 def contador_mergesort(vetor):
     n = len(vetor)
